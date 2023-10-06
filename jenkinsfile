@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    git 'https://github.com/sumanthdevopsgit/s3cftask.git'
+                }
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                sh 'terraform init'
+                sh 'terraform plan'
+            }
+        }
+
+        stage('Terraform Apply') {
+            steps {
+                
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Terraform apply succeeded!'
+        }
+        failure {
+            echo 'Terraform apply failed!'
+        }
+    }
+
