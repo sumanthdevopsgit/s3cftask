@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "awss3cfd"
+  bucket = "kljkl"
   acl    = "private"
 
   versioning {
