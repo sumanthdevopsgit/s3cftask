@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "us-east-1"
   access_key = "AKIAQNJKUD7DGHVTQ4KL"
   secret_key = "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"
 }
@@ -16,7 +16,7 @@ resource "aws_s3_bucket" "my_bucket" {
 resource "aws_s3_bucket_object" "website" {
   bucket = aws_s3_bucket.my_bucket.bucket
   key    = "index.html"
-  source = "C:/Users/vsagiraju/Desktop/cf/index.html"
+  source = "./index.html"
   acl    = "private"
   content_type = "text/html"
 }
