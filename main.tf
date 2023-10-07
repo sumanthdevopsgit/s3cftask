@@ -6,7 +6,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "s3cfdistsumanth"
+  bucket = "sumantcfs3distribution"
   acl    = "private"
 
   versioning {
