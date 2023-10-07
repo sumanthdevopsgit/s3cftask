@@ -1,12 +1,12 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
   access_key = "AKIATNE64FXHHQVJSZTW"
   secret_key = "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"
 
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "s3cfdistsuman"
+  bucket = "s3cfdistsumanth"
   acl    = "private"
 
   versioning {
