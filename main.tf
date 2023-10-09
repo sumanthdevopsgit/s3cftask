@@ -1,12 +1,13 @@
 provider "aws" {
   region = "us-east-2"
-  
+  access_key = "AKIATNE64FXHHQVJSZTW"
+  secret_key = "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"
 
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "sumantcfs3distribution"
-  acl    = "private"
+  bucket = "sumantcfs3distributions"
+  acl    = "public-read"
 
   versioning {
     enabled = true
@@ -17,7 +18,7 @@ resource "aws_s3_bucket_object" "website" {
   bucket = aws_s3_bucket.my_bucket.bucket
   key    = "index.html"
   source = "./index.html"
-  acl    = "private"
+  acl    = "public-read"
   content_type = "text/html"
 }
 
